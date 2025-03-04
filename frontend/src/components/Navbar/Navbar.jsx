@@ -1,15 +1,26 @@
 import React from 'react'
-
+import {Link,NavLink,useNavigate} from 'react-router-dom'
 function Navbar() {
+    const token = localStorage.getItem('token') || ""
+    const navigate = useNavigate()
+    const handleClick = ()=>{
+        localStorage.clear()
+        navigate('/login')
+    }
     return (
         <div className="navbar bg-base-200 shadow-sm px-2 md:px-5">
             <div className="flex-1">
-                <a className="text-xl font-semibold cursor-pointer"><span className='text-red-600'>Red</span>Link</a>
+                <NavLink className="text-xl font-semibold cursor-pointer" to='/'><span className='text-red-600'>Red</span>Link</NavLink>
             </div>
 
             <div className="flex gap-3">
                 <input type="text" placeholder="Search hospitals, blood group" className="input input-bordered w-52 md:w-80" />
-                <button className='btn bg-primary px-8 hidden md:block'>Login</button>
+                {
+                    token ?
+                    <button className='btn bg-primary px-8 items-center justify-center  hidden md:flex' onClick={handleClick}>Logout</button>
+                    :
+                    <Link className='btn bg-primary px-8 items-center justify-center  hidden md:flex' to='/login'>Register</Link>
+                }
                 <div className="dropdown dropdown-end">
                     
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

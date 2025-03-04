@@ -12,7 +12,7 @@ const app = express()
 app.use(express.urlencoded({extended:false}))
 app.use(cors())
 app.use(bodyParser.json())
-ConnectDB('mongodb://localhost:27017/redlink')
+ConnectDB(process.env.MONGO_URL)
 
 app.use('/api/hospital',HospitalRouter)
 app.use('/api/donate',DonarRouter)

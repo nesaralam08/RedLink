@@ -10,6 +10,10 @@ const HospitalSchema = mongoose.Schema({
         require:true,
         unique:true
     },
+    password:{
+        type:String,
+        require:true,
+    },
     contact:{
         type:String,
         require:true,
@@ -21,7 +25,7 @@ const HospitalSchema = mongoose.Schema({
     },
     location: {
         type: { type: String, enum: ["Point"], required: true },
-        coordinates: { type: [Number], required: true }, // [longitude, latitude]
+        coordinates: { type: [Number], required: true },
     },
     bloodAvailability: {
         A_positive: { type: Number, default: 0 },
@@ -33,6 +37,12 @@ const HospitalSchema = mongoose.Schema({
         AB_positive: { type: Number, default: 0 },
         AB_negative: { type: Number, default: 0 },
     },
+    status:{
+        type:String,
+        require:true,
+        enum:["verified","not verified","pending"],
+        default:"pending"
+    }
 },{timestamps:true})
 HospitalSchema.index({ location: "2dsphere" }); 
 
