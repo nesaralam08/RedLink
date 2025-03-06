@@ -3,25 +3,25 @@ const mongoose = require('mongoose')
 const HospitalSchema = mongoose.Schema({
     name:{
         type:String,
-        require:true
+        required:true
     },
     email:{
         type:String,
-        require:true,
+        required:true,
         unique:true
     },
     password:{
         type:String,
-        require:true,
+        required:true,
     },
     contact:{
         type:String,
-        require:true,
+        required:true,
         unique:true
     },
     address:{
         type:String,
-        require:true,
+        required:true,
     },
     location: {
         type: { type: String, enum: ["Point"], required: true },
@@ -39,7 +39,7 @@ const HospitalSchema = mongoose.Schema({
     },
     status:{
         type:String,
-        require:true,
+        required:true,
         enum:["verified","not verified","pending"],
         default:"pending"
     }

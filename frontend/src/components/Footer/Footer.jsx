@@ -5,17 +5,17 @@ function Footer() {
         <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10">
             <nav>
                 <h6 className="footer-title text-primary">Services</h6>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <a className="link link-hover">Nearby Hospitals</a>
+                <a className="link link-hover">Nearby Donars</a>
+                <a className="link link-hover">Login</a>
+                <a className="link link-hover">Register</a>
             </nav>
             <nav>
-                <h6 className="footer-title text-primary">Company</h6>
+                <h6 className="footer-title text-primary">RedLink</h6>
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>
                 <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <a className="link link-hover">Ask Query</a>
             </nav>
             <nav>
                 <h6 className="footer-title text-primary">Social</h6>

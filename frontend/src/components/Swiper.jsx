@@ -28,7 +28,7 @@ export default function SwiperPage() {
             >
                 {/* <SwiperSlide><div className='h-full'><img src={banner1} /></div></SwiperSlide> */}
                 {/* <SwiperSlide><div className='h-full'><img src={banner2} /></div></SwiperSlide> */}
-                <SwiperSlide><div className='h-full'><img src={banner3} /></div></SwiperSlide>
+                {/* <SwiperSlide><div className='h-full'><img src={banner3} /></div></SwiperSlide> */}
                 <SwiperSlide><div className='h-full'><img src={banner4} /></div></SwiperSlide>
                 <SwiperSlide><div className='h-full'><img src={banner5} /></div></SwiperSlide>
                 <SwiperSlide><div className='h-full'><img src={banner6} /></div></SwiperSlide>

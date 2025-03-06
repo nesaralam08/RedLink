@@ -19,7 +19,7 @@ function Navbar() {
                     token ?
                     <button className='btn bg-primary px-8 items-center justify-center  hidden md:flex' onClick={handleClick}>Logout</button>
                     :
-                    <Link className='btn bg-primary px-8 items-center justify-center  hidden md:flex' to='/login'>Register</Link>
+                    <Link className='btn bg-primary px-8 items-center justify-center  hidden md:flex' to='/register'>Register</Link>
                 }
                 <div className="dropdown dropdown-end">
                     
@@ -31,12 +31,13 @@ function Navbar() {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-5 w-52 p-4 shadow gap-2">
-                        <li><a className='py-2'>Find Nearby</a></li>
+                        <li><Link className='py-2' to='/nearby-donars'>Nearby Donars</Link></li>                        
+                        <li><Link className='py-2' to='nearby-hospitals'>Nearby Hospitals</Link></li>                        
                         <li><a className='py-2'>Donate Blood</a></li>
                         <li><a className='py-2'>Request for blood</a></li>
                         <hr />
                         {/* <br /> */}
-                        <li><button className='btn bg-primary'>Login</button></li>
+                        <li><Link className='btn bg-primary' to='/login'>Login</Link></li>
                     </ul>
                 </div>
 

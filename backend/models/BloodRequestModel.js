@@ -13,11 +13,22 @@ const BloodRequestSchema = mongoose.Schema({
     hostpitalID:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Hospital",
-        require:true
+        required:true,
+        default:null
+    },
+    donarID:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Donater",
+        required:true,
+        default:null
     },
     bloodGroup:{
         type:String,
-        require:true
+        required:true
+    },
+    location: {
+        type: { type: String, enum: ["Point"], required: true },
+        coordinates: { type: [Number], required: true },
     },
     status:{
         type:String,
@@ -26,4 +37,5 @@ const BloodRequestSchema = mongoose.Schema({
     }
 },{timestamps:true})
 
+BloodRequestSchema.index({ location: "2dsphere" }); 
 module.exports = mongoose.model("BloodRequest",BloodRequestSchema);

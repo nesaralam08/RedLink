@@ -9,6 +9,8 @@ import Dashboard from './Dashboard/Dashboard'
 // import PageLoading from '../utils/PageLoading'
 import NotFound from '../utils/NotFound'
 import PrivateRoute from '../utils/PrivateRoute'
+import NearbyHospital from './NearbyHospital'
+import NearbyDonars from './NeabyDonars'
 function Routers() {
   return (
     <BrowserRouter>
@@ -17,6 +19,8 @@ function Routers() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register />}></Route>
+        <Route path='/nearby-hospitals' element={<NearbyHospital/>}></Route>
+        <Route path='/nearby-donars' element={<NearbyDonars/>}></Route>
         <Route path='/dashboard' element={<PrivateRoute Component={Dashboard}/>}></Route>
         <Route path='*' element={<NotFound/>}></Route>
       </Routes>
